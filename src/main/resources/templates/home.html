@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Home Page</title>
+</head>
+<body>
+<header>
+    <h1>Welcome to the Home Page</h1>
+    <nav>
+        <a href="/">Home</a> |
+        <a href="/login">Login</a> |
+        <a href="/admin">Admin Page</a>
+
+        <form action="/logout" method="POST" style="display:inline;">
+            <button type="submit">Logout</button>
+        </form>
+    </nav>
+</header>
+
+<main>
+    <h2>Welcome, <span th:text="${#authentication.name}">User</span></h2>
+    <p>This is the home page of the application. You are logged in as: <span th:text="${#authentication.principal.username}">Username</span></p>
+</main>
+
+<footer>
+    <p>&copy; 2024 My Application</p>
+</footer>
+</body>
+</html>
